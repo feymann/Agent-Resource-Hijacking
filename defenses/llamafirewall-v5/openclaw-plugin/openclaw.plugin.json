@@ -1,0 +1,41 @@
+{
+  "id": "resource-hijack-llamafirewall-v5",
+  "name": "Resource Hijack LlamaFirewall v5",
+  "description": "Blocks misaligned OpenClaw tool calls with LlamaFirewall AlignmentCheck",
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "socketPath": {
+        "type": "string",
+        "description": "Unix socket exposed by the LlamaFirewall scanner service"
+      },
+      "requestTimeoutMs": {
+        "type": "integer",
+        "minimum": 1000,
+        "maximum": 600000,
+        "default": 380000
+      },
+      "failClosed": {
+        "type": "boolean",
+        "default": true
+      },
+      "auditTag": {
+        "type": "string",
+        "minLength": 1
+      },
+      "attemptId": {
+        "type": "string",
+        "minLength": 1
+      },
+      "fallbackAuditPath": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": ["socketPath", "auditTag", "attemptId", "fallbackAuditPath"]
+  }
+}

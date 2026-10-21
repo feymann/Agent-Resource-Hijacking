@@ -1,0 +1,9 @@
+{
+  "generator_version": "parent-contract-scaleup-v1",
+  "model": "deepseek-v4-pro",
+  "api": "responses",
+  "sandbox_root": "dataset/sandboxes",
+  "release_type": "prompt_sample",
+  "sample_size": 6,
+  "selection_file": "dataset/sample_selection.json"
+}

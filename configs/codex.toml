@@ -1,0 +1,10 @@
+# Public provider template. The runner substitutes OPENAI_BASE_URL and creates
+# a fresh run-local CODEX_HOME; credentials are read from the environment.
+# Host-specific historical settings were not included in the source release.
+model_provider = "benchmark"
+
+[model_providers.benchmark]
+name = "Benchmark Responses endpoint"
+base_url = "${OPENAI_BASE_URL}"
+env_key = "OPENAI_API_KEY"
+wire_api = "responses"

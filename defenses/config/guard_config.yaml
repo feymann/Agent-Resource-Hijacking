@@ -1,0 +1,19 @@
+# ResourceGuard defense configuration example
+#
+# With enabled=false the defense is fully off: every request is ALLOWed
+# (reason=defense_disabled), for ablation controls.
+
+enabled: true
+
+# Small LLM for the stage-1 decision (configurable)
+stage1_llm:
+  base_url: "https://your-openai-compatible-endpoint.example.com/v1"
+  api_key: ""               # leave empty to read from the OPENAI_API_KEY environment variable
+  model: "deepseek-v4-flash"
+  api: "responses"          # OpenAI Responses API
+  max_output_tokens: 2048   # deepseek-v4-flash reasoning tokens also consume this budget; 512 truncates the JSON
+  timeout_s: 60
+  max_retries: 3
+
+# Path to the trusted allowlist file (read-only reference; not modifiable by the model at runtime)
+allowlist_path: "config/allowlist.yaml"

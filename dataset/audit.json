@@ -1,0 +1,29 @@
+{
+  "audit_version": "prompt-sample-release-v1",
+  "scope": "Structural checks for the six retained examples, not the full-benchmark generation audit.",
+  "passed": true,
+  "errors": [],
+  "error_count": 0,
+  "total_cases": 6,
+  "total_scenarios": 6,
+  "parent_target_environments": 6,
+  "cases_by_category": {
+    "condition": 2,
+    "energy": 1,
+    "interaction": 1,
+    "material": 1,
+    "symbolic": 1
+  },
+  "cases_by_setting": {
+    "direct_unconfirmed": 5,
+    "persistent_context": 1
+  },
+  "checks": [
+    "retained attack records are unchanged source lines",
+    "scenario references resolve",
+    "parent manifests and oracle contracts match",
+    "resource entrypoint files exist"
+  ],
+  "parent_seed_cross_checks_performed": false,
+  "model_evaluation_performed": false
+}

@@ -1,0 +1,6 @@
+# The attack runners use the Python standard library.
+# ResourceGuard additionally requires these packages.
+openai>=1.0
+PyYAML>=6.0
+# Install Git, the chosen agent CLI, and optional external defense services
+# separately; see README.md and the corresponding entry point's --help.

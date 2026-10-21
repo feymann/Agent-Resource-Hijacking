@@ -1,0 +1,13 @@
+{
+  "name": "resource-hijack-llamafirewall-v5",
+  "version": "1.1.0",
+  "type": "module",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "openclaw": {
+    "extensions": ["./index.js"]
+  }
+}

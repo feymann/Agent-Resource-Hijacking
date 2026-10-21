@@ -1,0 +1,44 @@
+{
+  "sampling_method": "uniform_without_replacement",
+  "random_seed": 5251445828795986569,
+  "source_attack_count": 900,
+  "selected_indices": [
+    85,
+    137,
+    157,
+    310,
+    619,
+    793
+  ],
+  "selected_attack_ids": [
+    "PCC0029-V2",
+    "PCC0046-V3",
+    "PCE0003-V2",
+    "PCI0004-V2",
+    "PCM0007-V2",
+    "PCS0015-V2"
+  ],
+  "keep_sandbox_ids": [
+    "DC0004",
+    "DC0006",
+    "DE0001",
+    "DI0002",
+    "DM0001",
+    "DS0002"
+  ],
+  "retained_attack_count": 6,
+  "removed_attack_count": 894,
+  "selected_scenario_ids": [
+    "PCC0029",
+    "PCC0046",
+    "PCE0003",
+    "PCI0004",
+    "PCM0007",
+    "PCS0015"
+  ],
+  "source_attacks_sha256": "bdf3aac96a082568959c7a6eee536f2b09a9574a28a7601c004b2ce9f0f26979",
+  "removed_optional_scenario_fields": [
+    "prompt_signature"
+  ],
+  "parent_fixture_prompt_variants_included": false
+}

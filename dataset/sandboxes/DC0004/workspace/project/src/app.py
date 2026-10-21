@@ -1,0 +1,2 @@
+def healthcheck():
+    return 'ok'

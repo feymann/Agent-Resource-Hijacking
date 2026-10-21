@@ -1,0 +1,200 @@
+{
+  "defaults": {
+    "baseline_profile": "deepseek",
+    "sharded_profile": "gemini35flash",
+    "sharding": {
+      "shard_size": 30,
+      "max_workers": 15,
+      "max_error_rounds": 3,
+      "monitor_interval": 30,
+      "sink_port_base": 9400
+    },
+    "defense_profile": "deepseek",
+    "agentdog_model": "gpt-5.5",
+    "codex": {
+      "model": "deepseek-v4-pro-0813",
+      "judge_model": "deepseek-v4-pro-0813",
+      "run_name_prefix": "codex_baseline_deepseek",
+      "timeout": 300,
+      "workers": 8,
+      "sink_port_base": 9700
+    }
+  },
+  "profiles": {
+    "deepseek": {
+      "openclaw_model": "openai/deepseek-v4-pro",
+      "runner_version": "resource-hijack-parent-contract-local-v1",
+      "protocol": "isolated-openclaw-state-copied-parent-workspace-local-oracle",
+      "timeout": 300,
+      "judge_model": "deepseek-v4-pro",
+      "judge_api": "responses",
+      "judge_max_output_tokens": 800,
+      "judge_timeout": 60,
+      "judge_retries": 2,
+      "category_start_delays": {
+        "material": 0,
+        "condition": 0,
+        "energy": 0,
+        "symbolic": 0,
+        "knowledge": 0,
+        "interaction": 0
+      },
+      "category_concurrency": 6
+    },
+    "gpt55": {
+      "openclaw_model": "openai/gpt-5.5",
+      "runner_version": "resource-hijack-parent-contract-local-gpt55-v1",
+      "protocol": "isolated-openclaw-state-copied-parent-workspace-local-oracle-gpt55",
+      "timeout": 300,
+      "judge_model": "deepseek-v4-pro",
+      "judge_api": "responses",
+      "judge_max_output_tokens": 800,
+      "judge_timeout": 60,
+      "judge_retries": 2,
+      "category_start_delays": {
+        "material": 0,
+        "condition": 5,
+        "energy": 10,
+        "symbolic": 15,
+        "knowledge": 20,
+        "interaction": 25
+      },
+      "category_concurrency": 6,
+      "override_openai_endpoint": true
+    },
+    "glm52": {
+      "openclaw_model": "openai/glm-5.2",
+      "runner_version": "resource-hijack-parent-contract-local-glm52-v1",
+      "protocol": "isolated-openclaw-state-copied-parent-workspace-local-oracle-glm52",
+      "timeout": 300,
+      "judge_model": "deepseek-v4-pro",
+      "judge_api": "responses",
+      "judge_max_output_tokens": 800,
+      "judge_timeout": 60,
+      "judge_retries": 2,
+      "category_start_delays": {
+        "material": 0,
+        "condition": 5,
+        "energy": 10,
+        "symbolic": 15,
+        "knowledge": 20,
+        "interaction": 25
+      },
+      "category_concurrency": 6,
+      "extra_model": {
+        "id": "glm-5.2",
+        "name": "glm-5.2",
+        "reasoning": false,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 202752,
+        "maxTokens": 16384,
+        "compat": {
+          "thinkingFormat": "qwen"
+        }
+      }
+    },
+    "kimik3": {
+      "openclaw_model": "kimi/kimi-k3",
+      "runner_version": "resource-hijack-parent-contract-local-kimik3-anthropic-v1",
+      "protocol": "isolated-openclaw-state-copied-parent-workspace-local-oracle-kimik3-anthropic-messages",
+      "timeout": 300,
+      "judge_model": "deepseek-v4-pro",
+      "judge_api": "responses",
+      "judge_max_output_tokens": 800,
+      "judge_timeout": 60,
+      "judge_retries": 2,
+      "category_start_delays": {
+        "material": 0,
+        "condition": 5,
+        "energy": 10,
+        "symbolic": 15,
+        "knowledge": 20,
+        "interaction": 25
+      },
+      "category_concurrency": 1,
+      "provider_name": "kimi",
+      "provider_config": {
+        "api": "anthropic-messages",
+        "headers": {
+          "User-Agent": "claude-code/0.1.0"
+        },
+        "models": [
+          {
+            "id": "kimi-k3",
+            "name": "kimi-k3",
+            "api": "anthropic-messages",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 32768
+          }
+        ]
+      }
+    },
+    "gemini35flash": {
+      "openclaw_model": "relay/gemini-3.5-flash",
+      "runner_version": "resource-hijack-parent-contract-local-gemini35flash-relay-v1",
+      "protocol": "isolated-openclaw-state-copied-parent-workspace-local-oracle-gemini35flash-relay-openai-responses",
+      "timeout": 300,
+      "judge_model": "deepseek-v4-pro",
+      "judge_api": "chat-completions",
+      "judge_max_output_tokens": 2400,
+      "judge_timeout": 60,
+      "judge_retries": 2,
+      "category_start_delays": {
+        "material": 0,
+        "condition": 5,
+        "energy": 10,
+        "symbolic": 15,
+        "knowledge": 20,
+        "interaction": 25
+      },
+      "category_concurrency": 6,
+      "provider_name": "relay",
+      "provider_config": {
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "gemini-3.5-flash",
+            "name": "gemini-3.5-flash",
+            "api": "openai-responses",
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 65536
+          }
+        ]
+      },
+      "sharding": {
+        "shard_size": 30,
+        "max_workers": 15,
+        "max_error_rounds": 3,
+        "monitor_interval": 30,
+        "sink_port_base": 9400
+      }
+    }
+  }
+}

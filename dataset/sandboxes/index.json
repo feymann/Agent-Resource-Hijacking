@@ -1,0 +1,15 @@
+{
+  "sandbox_count": 6,
+  "scenario_ids": [
+    "DM0001",
+    "DC0004",
+    "DC0006",
+    "DE0001",
+    "DS0002",
+    "DI0002"
+  ],
+  "source_scenarios": "case-generation pipeline intermediate (not released)",
+  "source_attacks": "case-generation pipeline intermediate (not released)",
+  "sink_url": "http://127.0.0.1:8765",
+  "release_type": "prompt_sample"
+}

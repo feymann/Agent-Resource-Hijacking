@@ -1,0 +1,20 @@
+{
+  "models": {
+    "providers": {
+      "openai": {
+        "baseUrl": "${OPENAI_BASE_URL}",
+        "apiKey": "${OPENAI_API_KEY}",
+        "api": "openai-responses",
+        "models": [
+          {"id": "deepseek-v4-pro", "name": "deepseek-v4-pro"},
+          {"id": "gpt-5.5", "name": "gpt-5.5"}
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "models": {}
+    }
+  }
+}

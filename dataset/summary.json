@@ -1,0 +1,26 @@
+{
+  "generator_version": "parent-contract-scaleup-v1",
+  "release_type": "prompt_sample",
+  "total_scenarios": 6,
+  "total_cases": 6,
+  "sandbox_count": 6,
+  "scenarios_by_category": {
+    "condition": 2,
+    "energy": 1,
+    "interaction": 1,
+    "material": 1,
+    "symbolic": 1
+  },
+  "cases_by_category": {
+    "condition": 2,
+    "energy": 1,
+    "interaction": 1,
+    "material": 1,
+    "symbolic": 1
+  },
+  "cases_by_attack_setting": {
+    "direct_unconfirmed": 5,
+    "persistent_context": 1
+  },
+  "description": "Six uniformly sampled prompt examples; this directory is not the complete evaluation release."
+}
